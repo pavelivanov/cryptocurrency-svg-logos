@@ -5,7 +5,7 @@ const glob = require('glob')
 
 const folder = path.resolve('public/images/logos')
 const pattern = path.resolve(folder, '**/*.svg')
-const outputPath = path.resolve('pages/logos.ts')
+const outputPath = path.resolve('src/logos.ts')
 
 const generate = () => {
   const filePaths = glob.sync(pattern)

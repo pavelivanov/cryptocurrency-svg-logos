@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 
 import s from './Home.module.css'
 
-import logos from './logos'
+import logos from '../logos'
 
 
 const Home: NextPage = () => {
