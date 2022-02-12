@@ -1,10 +1,12 @@
 .container {
-
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .input {
   width: 100%;
   height: 48px;
+  margin-bottom: 24px;
   padding: 0 20px;
   border: 0;
   outline: none;
@@ -38,6 +40,10 @@
 
 @media (max-width: 768px) {
 
+  .page {
+    padding: 24px 0 48px;
+  }
+
   .items {
     grid-gap: 8px;
     grid-template-columns: repeat(2, 1fr);
@@ -49,6 +55,10 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+
+  .page {
+    padding: 32px 0 64px;
+  }
 
   .items {
     grid-gap: 20px;
@@ -68,12 +78,9 @@
 
   .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
   }
 
   .input {
-    margin-bottom: 24px;
     font-size: 18px;
   }
 
