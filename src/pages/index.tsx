@@ -6,11 +6,20 @@ import s from './Home.module.css'
 import logos from '../logos'
 
 
-const Home: NextPage = () => {
-  const [ query, setQuery ] = useState('')
+type Props = {
+  initialQuery: string
+}
+
+const Home: NextPage<Props> = ({ initialQuery }) => {
+  const [ query, setQuery ] = useState(initialQuery || '')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value)
+    const query = event.target.value
+
+    setQuery(query)
+
+    // @ts-ignore
+    history.pushState({}, null, `/?q=${query}`)
   }
 
   const filteredLogos = !query ? logos : logos.filter((name) => name.includes(query.toLowerCase()))
@@ -18,7 +27,7 @@ const Home: NextPage = () => {
   return (
     <div className={s.page}>
       <div className={s.container}>
-        <input className={s.input} onChange={handleChange} />
+        <input className={s.input} value={query} onChange={handleChange} />
         <div className={s.items}>
           {
             filteredLogos.map((name) => (
@@ -31,6 +40,13 @@ const Home: NextPage = () => {
       </div>
     </div>
   )
+}
+
+Home.getInitialProps = ({ query }) => {
+
+  return {
+    initialQuery: query.q as string,
+  }
 }
 
 
