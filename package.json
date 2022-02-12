@@ -4,7 +4,7 @@
   "scripts": {
     "gen-logos": "node scripts/logos-loader.js",
     "dev": "npm run gen-logos && next dev",
-    "build": "npm run gen-logos && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
