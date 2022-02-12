@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         <div className={s.items}>
           {
             filteredLogos.map((name) => (
-              <a key={name} className={s.item} href={`/images/logos/${name}.svg`} target="_blank" rel="noopener">
+              <a key={name} className={s.item} href={`/images/logos/${name}.svg`} target="_blank" rel="noreferrer">
                 <img className={s[name]} src={`/images/logos/${name}.svg`} alt={name} />
               </a>
             ))
